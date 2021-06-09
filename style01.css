@@ -185,7 +185,10 @@ img {
 }
 
 .material-icons {
-    font-size: 2rem;
+    margin: 0 1rem 0 1rem;
+}
+.play-pause-container {
+    font-size: 3rem;
 }
 
 /* search bar container */
@@ -254,7 +257,13 @@ input {
     width: 49%;
     background-image: linear-gradient(rgb(68, 67, 67), black);
     border-radius: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+
+
 .search-card-world-hits-one:hover {
     background-image: linear-gradient(rgb(102, 167, 252), rgb(3, 13, 59));
 }
@@ -273,6 +282,8 @@ input {
 .search-card-local-love-two:hover {
     background-image: linear-gradient(rgb(245, 122, 198), rgb(51, 29, 29));
 }
+
+
 
 /* footer properties */
 .footer-container {
@@ -294,6 +305,7 @@ input {
     justify-content: center;
 }
 .copyright-icon {
+    margin: 0;
     font-size: 1.2rem;
 }
 .spacing-div-footer {
