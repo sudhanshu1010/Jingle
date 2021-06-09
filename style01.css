@@ -69,6 +69,7 @@ body {
 }
 
 #signup:hover {
+    border:solid 1px #FFE06B;
     background-color: #FFE06B;
     color: black;
 }
