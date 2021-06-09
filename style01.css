@@ -27,7 +27,13 @@ body {
     justify-content: center;
     align-items: center;
     animation: shake 5s infinite;
+    cursor: pointer;
 }
+.page-icon-container:hover {
+    transition: all 1s ease-in-out;
+    color: #FFE06B;
+}
+
 @keyframes shake {
     0% { transform: translate(1px, 1px) rotate(0deg); }
   10% { transform: translate(-1px, -1px) rotate(-1deg); }
@@ -46,13 +52,16 @@ body {
     height: 100%;
     width: 70%;
 }
+
 .button {
     padding: .8rem;
     border: none;
     border-radius: 2rem;
     width: 7rem;
     transition: all .3s ease-in;
+    cursor: pointer;
 }
+
 #signup {
     background: none;
     color: #fff;
@@ -105,20 +114,23 @@ a {
 }
 
 ul {
-    line-height: 3rem;
+    line-height: 4rem;
 }
 
 ul li {
     list-style-type: none;
 }
+
 span {
     margin-right: .4rem;
 }
+
 ul li a {
     display: flex;
     align-items: center;
     color: rgb(184, 180, 180);
 }
+
 ul li a:hover {
     color: #ffe68b;
 }
@@ -151,6 +163,7 @@ img {
     border-radius: 2rem;
     width: 70%;
 }
+
 .progress-bar-container {
     height: 10%;
     width: 100%;
@@ -158,22 +171,27 @@ img {
     justify-content: center;
     align-items: center;
 }
+
 .progress-bar {
     height: 4px;
     width: 80%;
     border-radius: 2px;
     background-color: rgb(104, 103, 103);
+    cursor: pointer;
 }
+
 .timer {
     color: #fff;
     padding: 1rem;
     font-size: .8rem;
 }
+
 .progress-bar-line {
     height: 100%;
     width: 40%;
     background-color: #fff;
 }
+
 .controls-container {
     height: 10%;
     width: 100%;
@@ -185,10 +203,14 @@ img {
 }
 
 .material-icons {
+    cursor: pointer;
     margin: 0 1rem 0 1rem;
 }
 .play-pause-container {
-    font-size: 3rem;
+    font-size: 3.5rem;
+}
+.previous-container, .next-container {
+    font-size: 2rem;
 }
 
 /* search bar container */
@@ -260,6 +282,7 @@ input {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 
@@ -317,11 +340,13 @@ input {
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
 }
 .github-icon, .linkedin-icon, .instagram-icon {
     width: 13%;
     height: 33%;
+}
+.connect-with-us.a {
+    cursor: pointer;
 }
 
 

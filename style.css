@@ -54,20 +54,24 @@ body {
     cursor: pointer;
     transition: all .2s ease-in;
 }
+
 .signup-btn {
     color: #fff;
     background: transparent;
     border:solid 1px #fff ;
     border-radius: 2rem;
 }
+
 .signup-btn:hover {
     color: #FFE06B;
     border:solid 1px #FFE06B ;
     border-radius: 2rem;
 }
+
 .login-btn:hover {
     background-color:#FFE06B;
 }
+
 /* music container */
 .music-container {
     height: 100%;
