@@ -8,6 +8,8 @@ body {
     box-sizing: border-box;
 }
 
+
+
 /* title bar properties */
 .title-bar-container {
     height: 10vh;
@@ -29,6 +31,7 @@ body {
     animation: shake 5s infinite;
     cursor: pointer;
 }
+
 .page-icon-container:hover {
     transition: all 1s ease-in-out;
     color: #FFE06B;
@@ -92,6 +95,9 @@ body {
     align-items: center;
     justify-content: space-evenly;
 }
+
+
+
 
 /* music container properties */
 .music-container {
@@ -171,6 +177,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Rubik', sans-serif;
 }
 
 .progress-bar {
@@ -189,7 +196,7 @@ img {
 
 .progress-bar-line {
     height: 100%;
-    width: 40%;
+    width: 0;
     background-color: #fff;
 }
 
@@ -207,12 +214,18 @@ img {
     cursor: pointer;
     margin: 0 1rem 0 1rem;
 }
+
 .play-pause-container {
     font-size: 3.5rem;
 }
+
 .previous-container, .next-container {
     font-size: 2rem;
 }
+
+
+
+
 
 /* search bar container */
 .search-bar-container {
@@ -229,6 +242,7 @@ img {
     justify-content: center;
 
 }
+
 .search-bar-holder {
     margin-top: 1.3rem;
     height: 80%;
@@ -239,6 +253,7 @@ img {
     align-items: center;
     justify-content: center;
 }
+
 .search-bar-text {
     width: 80%;
 }
@@ -264,11 +279,13 @@ input {
     color: #fff;
     padding: .3rem;
 }
+
 .search-heading {
     height: 10%;
     width: 100%;
     font-size: 0.8rem;
 }
+
 .cards-container {
     height: 90%;
     width: 100%;
@@ -285,8 +302,6 @@ input {
     justify-content: center;
     cursor: pointer;
 }
-
-
 
 .search-card-world-hits-one:hover {
     background-image: linear-gradient(rgb(102, 167, 252), rgb(3, 13, 59));
@@ -309,6 +324,8 @@ input {
 
 
 
+
+
 /* footer properties */
 .footer-container {
     height: 10vh;
@@ -317,10 +334,12 @@ input {
     background-color: #1F1F1F;
     display: flex;
 }
+
 .jingle {
     color: #FFE06B;
     font-size: 1.2rem;
 }
+
 .copyright-container {
     height: 90%;
     width: 20%;
@@ -328,13 +347,16 @@ input {
     align-items: center;
     justify-content: center;
 }
+
 .copyright-icon {
     margin: 0;
     font-size: 1.2rem;
 }
+
 .spacing-div-footer {
     width: 60%;
 }
+
 .connect-with-us {
     height: 100%;
     width: 20%;
@@ -342,13 +364,15 @@ input {
     align-items: center;
     justify-content: center;
 }
+
 .github-icon, .linkedin-icon, .instagram-icon {
     width: 13%;
     height: 33%;
 }
+
 .connect-with-us.a {
     cursor: pointer;
 }
-
-
-
+.liked {
+    color: rgb(250, 110, 110);
+}
