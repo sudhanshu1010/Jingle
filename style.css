@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+}
+* {
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 2px;
+}
+
+/* title bar properties */
+
+.title-bar-container {
+    height: 10vh;
+    width: 100vw;
+    background-color: #1F1F1F;
+    display: flex;
+}
+
+.page-icon-container {
+    color: #fff;
+    height: 100%;
+    width: 10%;
+    font-size: 2rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.spacing-div {
+    height: 100%;
+    width: 75%;
+}
+
+.login-signup {
+    height: 100%;
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.button {
+    outline: none;
+    border: none;
+    height: 2.5rem;
+    width: 6rem;
+    border-radius: 2rem;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all .2s ease-in;
+}
+.signup-btn {
+    color: #fff;
+    background: transparent;
+    border:solid 1px #fff ;
+    border-radius: 2rem;
+}
+.signup-btn:hover {
+    color: #FFE06B;
+    border:solid 1px #FFE06B ;
+    border-radius: 2rem;
+}
+.login-btn:hover {
+    background-color:#FFE06B;
+}
+/* music container */
+.music-container {
+    height: 100%;
+    width: 10%;
+    background-image: linear-gradient(rgb(104, 211, 253), rgb(22, 183, 247));
+}
+
+/* footer properties */
+.footer-container {
+    height: 10vh;
+    width: 100%;
+    background-color: #1F1F1F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.controls-container {
+    display: flex;
+    align-items: center;
+    width: 20%;
+    justify-content: space-evenly;
+    text-align: center;
+    height: 100%;
+}
+.favorite-container, .volume-container {
+    font-size: 1.4rem;
+}
+.previous-container, .next-container {
+    font-size: 2rem;
+}
+.play-pause-container {
+    font-size: 3rem;
+}
+.home-container {
+    height: 100%;
+    width: 20%;
+    background-color: black;
+}
+
+
+
+

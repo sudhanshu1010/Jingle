@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style01.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="title-bar-container">
+        <div class="page-icon-container">Jingle</div>
+
+        <div class="spacing-div"></div>
+
+        <div class="login-signup">
+            <button class="button signup-btn" id="signup">About Us</button>
+            <button class="button login-btn" id="login">Contact Us</button>
+        </div>
+    </div>
+
+    <div class="music-container">
+        <div class="home-container">
+            <ul>
+                <li><a href="#"><span class="material-icons home">home</span>Home</a></li>
+                <li><a href="#"><span class="material-icons web">web</span>Browse</a></li>
+                <li><a href="#"><span class="material-icons favorite">favorite</span>Favorite</a></li>
+                <li><a href="#"><span class="material-icons favorite">dashboard</span>Made for you</a></li>
+                <li><a href="#"><span class="material-icons playlist">playlist_play</span>Playlist</a></li>
+            </ul>
+        </div>
+
+        <div class="music-card-container">
+            <div class="image-container">
+                <img src="./coverImage.jpg" alt="">
+            </div>
+
+            <div class="song-details-container">
+                Song Name | Artist Name
+            </div>
+
+            <div class="progress-bar-container">
+                <div class="start-time timer">00:27</div>
+                <div class="progress-bar">
+                    <div class="progress-bar-line"></div>
+                </div>
+                <div class="end-time timer">03:32</div>
+            </div>
+
+            <div class="controls-container">
+                <div id="liked-songs"><span class="material-icons favorite-container">favorite_border</span></div>
+                <div id="previous"><span class="material-icons previous-container">skip_previous</span></div>
+                <div id="play-pause"><span class="material-icons play-pause-container">play_circle_filled</span></div>
+                <div id="next"><span class="material-icons next-container">skip_next</span></div>
+                <div id="volume"><span class="material-icons volume-container">volume_up</span></div>
+            </div>
+        </div>
+
+        <div class="search-bar-container">
+
+            <div class="search-bar">
+                <div class="search-bar-holder">
+                    <div class="search-bar-text"><input type="text" placeholder="Artists, songs or Playlist"></div>
+                    <div class="search-icon-container material-icons">search</div>
+                </div>
+            </div>
+
+            <div class="searched-items-container">
+                <div class="search-card-container">
+                    <div class="search-heading">World Hits</div>
+                    <div class="cards-container">
+                        <div class="search-card search-card-world-hits-one">
+                            <div class="search-card-list"></div>
+                        </div>
+                        <div class="search-card search-card-world-hits-two">
+                            <div class="search-card-list"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="search-card-container">
+                    <div class="search-heading">Top Trending</div>
+                    <div class="cards-container">
+                        <div class="search-card search-card-top-trending-one">
+                            <div class="search-card-list"></div>
+                        </div>
+                        <div class="search-card search-card-top-trending-two">
+                            <div class="search-card-list"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="search-card-container">
+                    <div class="search-heading">Local Love</div>
+                    <div class="cards-container">
+                        <div class="search-card search-card-local-love-one">
+                            <div class="search-card-list"></div>
+                        </div>
+                        <div class="search-card search-card-local-love-two">
+                            <div class="search-card-list"></div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+
+    <div class="footer-container">
+        <div class="copyright-container">
+            <div class="copyright-icon material-icons">copyright</div>
+            <div class="copyright-text">2021 <span class="jingle">Jingle</span>
+            </div>
+        </div>
+
+        <div class="spacing-div-footer"></div>
+
+        <div class="connect-with-us">
+            <div class="github-icon"><a href=""><img src="icons/github.svg" alt="" width="100%"></a></div>
+            <div class="linkedin-icon"><a href=""><img src="icons/linkedin.svg" alt=""></a></div>
+            <div class="instagram-icon"><a href=""><img src="icons/instagram.svg" alt=""></a></div>
+        </div>
+
+    </div>
+
+
+</body>
+<script src="./script.js"></script>
+
+</html>
