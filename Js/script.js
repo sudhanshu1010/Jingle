@@ -16,6 +16,8 @@ const searchDetail = document.querySelector(".searched-items-container")
 const searchCard = document.querySelector(".search-card")
 
 
+let isVolumeClicked = false;
+
 
 // function to like unlike songs
 likeUnlikeBtn.addEventListener("click", function(){
@@ -38,7 +40,6 @@ playPauseBtn.addEventListener("click", function(){
 })
 
 
-let isVolumeClicked = false;
 
 function controlVolume(){
     if(!isVolumeClicked){
@@ -55,8 +56,6 @@ function controlVolume(){
         document.querySelector("#volume-bar").remove();
     }
 }
-
-
 
 audio.addEventListener("timeupdate", function(e){
     let {duration, currentTime} = e.srcElement;
@@ -104,10 +103,6 @@ function openMenu(){
         backgroundColor: "white"
     })
     searchDetail.appendChild(menuDiv);
-    alert("he") 
 }
 
-for(let i = 0; i < 6; i++){
-    searchCard.addEventListener("click", openMenu)
-}
 volumeBtn.addEventListener("click", controlVolume)
