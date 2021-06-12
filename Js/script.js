@@ -1,3 +1,4 @@
+
 const likeUnlikeBtn = document.querySelector("#liked-songs");
 const previousBtn = document.querySelector("#previous");
 const playPauseBtn = document.querySelector("#play-pause");
@@ -8,6 +9,12 @@ const progress = document.querySelector(".progress-bar-line");
 const progressContainer = document.querySelector(".progress-bar")
 const songDuration = document.querySelector(".end-time");
 const songLength = document.querySelector(".start-time");
+const volumeBar = document.querySelector("#volume-bar");
+const controls = document.querySelector(".controls-container")
+const soundBarContainer = document.querySelector(".volume-bar-container")
+const searchDetail = document.querySelector(".searched-items-container")
+const searchCard = document.querySelector(".search-card")
+
 
 
 // function to like unlike songs
@@ -30,17 +37,26 @@ playPauseBtn.addEventListener("click", function(){
     }
 })
 
-volumeBtn.addEventListener("click", function(){
-    const volume = audio.volume;
-    if(volume == 1) {
-        volumeBtn.innerHTML = "volume_off"
-        audio.volume = 0;
+
+let isVolumeClicked = false;
+
+function controlVolume(){
+    if(!isVolumeClicked){
+        isVolumeClicked = true;
+        let volDiv = document.createElement("input");
+        volDiv.setAttribute("id","volume-bar");
+        volDiv.setAttribute("type","range");
+        volDiv.setAttribute("min","0");
+        volDiv.setAttribute("max","100");
+        volDiv.setAttribute("value","100");
+        soundBarContainer.appendChild(volDiv);
+    } else {
+        isVolumeClicked = false;
+        document.querySelector("#volume-bar").remove();
     }
-    else {
-        volumeBtn.innerHTML = "volume_up"
-        audio.volume = 1; 
-    }
-})
+}
+
+
 
 audio.addEventListener("timeupdate", function(e){
     let {duration, currentTime} = e.srcElement;
@@ -77,3 +93,21 @@ progressContainer.addEventListener("click", function (e) {
     audioEle.currentTime = (clickX / width) * duration;
 })
 
+
+// opening menu
+function openMenu(){
+    let menuDiv = document.createElement("div");
+    Object.assign(menuDiv, {
+        className: "search-clicked",
+        height: 100,
+        width: 100,
+        backgroundColor: "white"
+    })
+    searchDetail.appendChild(menuDiv);
+    alert("he") 
+}
+
+for(let i = 0; i < 6; i++){
+    searchCard.addEventListener("click", openMenu)
+}
+volumeBtn.addEventListener("click", controlVolume)

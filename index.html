@@ -10,13 +10,13 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style01.css">
+    <link rel="stylesheet" href="./Css/style01.css">
     <title>Document</title>
 </head>
 
 <body>
     <div class="title-bar-container">
-        <div class="page-icon-container">Jingle</div>
+        <div class="page-icon-container title">Jingle</div>
 
         <div class="spacing-div"></div>
 
@@ -29,11 +29,11 @@
     <div class="music-container">
         <div class="home-container">
             <ul>
-                <li><a href="#"><span class="material-icons home">home</span>Home</a></li>
-                <li><a href="#"><span class="material-icons web">web</span>Browse</a></li>
-                <li><a href="#"><span class="material-icons favorite">favorite</span>Favorite</a></li>
-                <li><a href="#"><span class="material-icons favorite">dashboard</span>Made for you</a></li>
-                <li><a href="#"><span class="material-icons playlist">playlist_play</span>Playlist</a></li>
+                <li class="home"><a href="#"><span class="material-icons">home</span>Home</a></li>
+                <li class="web"><a href="#"><span class="material-icons">web</span>Browse</a></li>
+                <li class="favorite"><a href="#"><span class="material-icons">favorite</span>Favorite</a></li>
+                <li class="made-for-you"><a href="#"><span class="material-icons">dashboard</span>Made for you</a></li>
+                <li class="playlist"><a href="#"><span class="material-icons">playlist_play</span>Playlist</a></li>
             </ul>
         </div>
 
@@ -57,11 +57,15 @@
             </div>
 
             <div class="controls-container">
+                <div class="controls-container-spacing-div"></div>
                 <div><span id="liked-songs" class="material-icons favorite-container">favorite_border</span></div>
                 <div><span id="previous" class="material-icons previous-container">skip_previous</span></div>
                 <div><span id="play-pause" class="material-icons play-pause-container">play_circle_filled</span></div>
                 <div><span id="next" class="material-icons next-container">skip_next</span></div>
                 <div><span id="volume" class="material-icons volume-container">volume_up</span></div>
+                <!-- <input id="volume-bar" type="range" min="0" max="100" value="100"> -->
+                <div class="volume-bar-container"></div>
+                
             </div>
         </div>
 
@@ -119,8 +123,7 @@
     <div class="footer-container">
         <div class="copyright-container">
             <div class="copyright-icon material-icons">copyright</div>
-            <div class="copyright-text">2021 <span class="jingle">Jingle</span>
-            </div>
+            <div class="copyright-text">2021 <span class="jingle">Jingle</span></div>
         </div>
 
         <div class="spacing-div-footer"></div>
@@ -138,6 +141,6 @@
 
 
 </body>
-<script src="./script.js"></script>
+<script src="./Js/script.js"></script>
 
 </html>

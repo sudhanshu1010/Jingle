@@ -4,6 +4,7 @@ body {
     height: 100vh;
     width: 100vw;
 }
+
 * {
     box-sizing: border-box;
 }
@@ -145,6 +146,7 @@ ul li a:hover {
 .music-card-container {
     width: 40%;
     height: 100%;
+    position: relative;
 }
 
 .image-container {
@@ -197,7 +199,7 @@ img {
 .progress-bar-line {
     height: 100%;
     width: 0;
-    background-color: #fff;
+    background-color: #ffe68b;
 }
 
 .controls-container {
@@ -208,6 +210,11 @@ img {
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.controls-container-spacing-div, .volume-bar-container {
+    height: 100%;
+    width: 30%;
 }
 
 .material-icons {
@@ -221,6 +228,24 @@ img {
 
 .previous-container, .next-container {
     font-size: 2rem;
+}
+/* for spacing */
+#volume-bar, .spacing-div-controls {
+    height: 100%;
+    width: 30%;
+}
+.volume-bar-container {
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+}
+
+#volume-bar {
+    cursor: pointer;
+    border-radius: 50%;
+    left: 0;
+    height: 3px;
+    width: 70%;
 }
 
 
@@ -295,13 +320,37 @@ input {
 .search-card {
     height: 100%;
     width: 49%;
-    background-image: linear-gradient(rgb(68, 67, 67), black);
     border-radius: .5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
 }
+
+.search-card-list {
+    text-shadow: 1px 1px 10px #4Dfff000;
+}
+
+.search-card-world-hits-one {
+    background-image: linear-gradient(rgba(102, 167, 252, .3), rgba(3, 13, 59, .3));
+}
+.search-card-world-hits-two {
+    background-image: linear-gradient(rgba(103, 209, 241, .3), rgba(1, 31, 39, .3));
+}
+.search-card-top-trending-one {
+    background-image: linear-gradient(rgba(253, 253, 167, .3), rgba(48, 48, 2, .3));
+}
+.search-card-top-trending-two {
+    background-image: linear-gradient(rgba(248, 248, 0, .3), rgba(43, 43, 17, .3));
+}
+.search-card-local-love-one {
+    background-image: linear-gradient(rgba(248, 152, 152, .3), rgba(59, 3, 3, .3));
+}
+.search-card-local-love-two {
+    background-image: linear-gradient(rgba(245, 122, 198, .3), rgba(51, 29, 29, .3));
+}
+
+
 
 .search-card-world-hits-one:hover {
     background-image: linear-gradient(rgb(102, 167, 252), rgb(3, 13, 59));
@@ -350,7 +399,11 @@ input {
 
 .copyright-icon {
     margin: 0;
+    margin-top: 4px;
     font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .spacing-div-footer {
