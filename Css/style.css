@@ -438,4 +438,24 @@ input {
 .main-container {
     height: 80vh;
     width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-main-container {
+    height: 60vh;
+    width: 80vw;
+    background-color: black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-image-container, .about-text-container, .about-links-container {
+    height: 100%;
+    width: 33%;
+    background-color: blue;
+    border-radius: 10px;
+    padding: 1rem;
 }
