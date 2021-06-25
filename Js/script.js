@@ -92,17 +92,13 @@ progressContainer.addEventListener("click", function (e) {
     audioEle.currentTime = (clickX / width) * duration;
 })
 
-
-// opening menu
-function openMenu(){
-    let menuDiv = document.createElement("div");
-    Object.assign(menuDiv, {
-        className: "search-clicked",
-        height: 100,
-        width: 100,
-        backgroundColor: "white"
-    })
-    searchDetail.appendChild(menuDiv);
+// opening modal 
+function openModal(){
+    let modal = document.createElement("div");
+    modal.classList.add("modal");
+    searchDetail.appendChild(modal);
 }
+
+searchCard.addEventListener("click", openModal)
 
 volumeBtn.addEventListener("click", controlVolume)

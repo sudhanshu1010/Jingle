@@ -250,11 +250,19 @@ img {
 }
 
 
-
+.modal {
+    height: 100%;
+    width: 100%;
+    margin-top: -32rem;
+    position: relative;
+    background-color: #171819;
+    border-radius: 1rem;
+}
 
 
 /* search bar container */
 .search-bar-container {
+    position: relative;
     height: 100%;
     width: 30%;
     background-color: #171819;
