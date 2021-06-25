@@ -11,9 +11,13 @@
     padding: 1rem;
     border-radius: 1rem;
 }
+h1 {
+    color: rgb(66, 66, 66);
+}
 .text-container, .image-container {
     height: 100%;
     width: 50%;
+    color: grey;
 }
 
 .text-container {
