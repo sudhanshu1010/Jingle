@@ -93,12 +93,15 @@ progressContainer.addEventListener("click", function (e) {
 })
 
 // opening modal 
-function openModal(){
+function openPop(){
     let modal = document.createElement("div");
+    modal.setAttribute("style", "background-color: red");
     modal.classList.add("modal");
     searchDetail.appendChild(modal);
 }
 
-searchCard.addEventListener("click", openModal)
+
+
+searchCard.addEventListener("click", openPop)
 
 volumeBtn.addEventListener("click", controlVolume)
