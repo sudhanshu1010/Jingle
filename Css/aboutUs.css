@@ -4,16 +4,21 @@
 }
 
 .content-holder {
-    height: 60%;
+    height: 70%;
     width: 60%;
     /* background-color: rgb(209, 211, 212); */
     display: flex;
     padding: 1rem;
     border-radius: 1rem;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    box-shadow: 2px 2px 10px 10px rgb(233, 233, 233);
 }
+
 h1 {
     color: rgb(66, 66, 66);
 }
+
 .text-container, .image-container {
     height: 100%;
     width: 50%;
