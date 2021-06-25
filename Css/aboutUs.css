@@ -35,7 +35,7 @@ h1 {
     outline: none;
     background: none;
     background-color: #FFE06B;
-    transition: all .3s ease-in;
+    transition: all .2s ease-in;
     padding: .8rem;
     border-radius: 2rem;
     border: 1px solid #FFE06B;
@@ -44,5 +44,5 @@ h1 {
 .portfolio-button:hover {
     background-color: #3DCFD3;
     border: 1px solid #3DCFD3;
-    box-shadow: 2px 2px 10px 1px rgb(141, 139, 139);
+    /* box-shadow: 2px 2px 10px 1px rgb(141, 139, 139); */
 }
