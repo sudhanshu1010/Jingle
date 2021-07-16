@@ -249,13 +249,18 @@ img {
     width: 50%;
 }
 
-
 .modal {
     height: 100%;
     width: 100%;
     margin-top: -32rem;
     position: relative;
     border-radius: 1rem;
+    background-color: red;
+}
+
+.modal-cut {
+    margin-top: 5%;
+    font-weight: 600;
 }
 
 
@@ -361,22 +366,22 @@ input {
 
 
 
-.search-card-world-hits-one:hover {
+.search-card-world-hits-one:hover, .modal-pop  {
     background-image: linear-gradient(rgb(102, 167, 252), rgb(3, 13, 59));
 }
-.search-card-world-hits-two:hover {
+.search-card-world-hits-two:hover, .modal-folk {
     background-image: linear-gradient(rgb(103, 209, 241), rgb(1, 31, 39));
 }
-.search-card-top-trending-one:hover {
+.search-card-top-trending-one:hover, .modal-concerts {
     background-image: linear-gradient(rgb(253, 253, 167), rgb(48, 48, 2));
 }
-.search-card-top-trending-two:hover {
+.search-card-top-trending-two:hover, .modal-indie  {
     background-image: linear-gradient(rgb(248, 248, 0), rgb(43, 43, 17));
 }
-.search-card-local-love-one:hover {
+.search-card-local-love-one:hover, .modal-bollywood {
     background-image: linear-gradient(rgb(248, 152, 152), rgb(59, 3, 3));
 }
-.search-card-local-love-two:hover {
+.search-card-local-love-two:hover, .modal-punjabi {
     background-image: linear-gradient(rgb(245, 122, 198), rgb(51, 29, 29));
 }
 
