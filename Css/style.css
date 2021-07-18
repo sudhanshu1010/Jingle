@@ -201,13 +201,11 @@ body {
     letter-spacing: 2px;
     padding-right: 2rem;
 }
+
 .selected {
     color: #fff;
-    background-color: #000;
-    border-left: 1px solid #FFE06B;
-    border-right: 1px solid #FFE06B;
-    border-bottom-right-radius: 2rem;
-    border-top-left-radius: 2rem;
+    background-image: linear-gradient(to right, rgb(51, 51, 51), #171819);
+    border-left: 1px solid #fff;
 }
 
 a { 
@@ -262,8 +260,8 @@ ul li a:hover {
 }
 
 .song {
-    margin-top: 1%;
-    height: 15%;
+    margin-top: .5rem;
+    height: 4rem;
     width: 100%;
     background-color: black;
     border-radius: 12px;
@@ -306,7 +304,7 @@ ul li a:hover {
     justify-content: center;
 }
 
-img {
+img{
     border-radius: 2rem;
     width: 70%;
 }
@@ -393,18 +391,28 @@ img {
     margin-top: -32rem;
     position: relative;
     border-radius: 1rem;
-    background-color: red;
     padding: 1rem;
 }
 
 .modal-cut {
-    margin-top: 5%;
+    margin-top: 2%;
     font-weight: 600;
     margin-bottom: 2%;
 }
 
 
 /* search bar container */
+
+.search-details {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    margin-top: -32rem;
+    border-radius: 1rem;
+    background-color:  #171819;
+    padding: 1rem;
+}
+
 .search-bar-container {
     position: relative;
     height: 100%;
@@ -507,22 +515,22 @@ input {
 
 
 
-.search-card-world-hits-one:hover, .modal-pop  {
+.search-card-world-hits-one:hover, .modal-Pop  {
     background-image: linear-gradient(rgb(102, 167, 252), rgb(3, 13, 59));
 }
-.search-card-world-hits-two:hover, .modal-folk {
+.search-card-world-hits-two:hover, .modal-Folk {
     background-image: linear-gradient(rgb(103, 209, 241), rgb(1, 31, 39));
 }
-.search-card-top-trending-one:hover, .modal-concerts {
+.search-card-top-trending-one:hover, .modal-Concerts {
     background-image: linear-gradient(rgb(253, 253, 167), rgb(48, 48, 2));
 }
-.search-card-top-trending-two:hover, .modal-indie  {
+.search-card-top-trending-two:hover, .modal-Indie  {
     background-image: linear-gradient(rgb(248, 248, 0), rgb(43, 43, 17));
 }
-.search-card-local-love-one:hover, .modal-bollywood {
+.search-card-local-love-one:hover, .modal-Bollywood {
     background-image: linear-gradient(rgb(248, 152, 152), rgb(59, 3, 3));
 }
-.search-card-local-love-two:hover, .modal-punjabi {
+.search-card-local-love-two:hover, .modal-Punjabi {
     background-image: linear-gradient(rgb(245, 122, 198), rgb(51, 29, 29));
 }
 

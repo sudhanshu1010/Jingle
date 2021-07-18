@@ -1,0 +1,250 @@
+let songs = [{
+    song: "Bheegi Bheegi Raaton Mein",
+    type: "Bollywood",
+    artist: "Adnan Sami",
+},
+{
+    song: "Ik Mulaqaat",
+    type: "Bollywood",
+    artist: "Ayushmann Khurana",
+},
+{
+    song: "Ikk Kudi",
+    type: "Bollywood",
+    artist: "Diljit Dosanjh",
+},
+{
+    song: "Main Rahoon Ya Na Rahoon",
+    type: "Bollywood",
+    artist: "Armaan Malik",
+},
+{
+    song: "Shayad",
+    type: "Bollywood",
+    artist: "Arijit Singh",
+},
+
+{
+    song: "Believer",
+    type: "Concerts",
+    artist: "Imagine Dragons",
+},
+{
+    song: "I Fell It Coming",
+    type: "Concerts",
+    artist: "The Weeknd",
+},
+{
+    song: "M83 'Midnight City'",
+    type: "Concerts",
+    artist: "Alex",
+},
+{
+    song: "Circles",
+    type: "Concerts",
+    artist: "Post Malone",
+},
+
+{
+    song: "Aisa Des Hai Mera",
+    type: "Folk",
+    artist: "Udit Narayan",
+},
+{
+    song: "Albela Sajan",
+    type: "Folk",
+    artist: "Shashi Suman",
+},
+{
+    song: "Gallan Goodiyan",
+    type: "Folk",
+    artist: "Farhan Akhtar",
+},
+{
+    song: "Genda Phool",
+    type: "Folk",
+    artist: "AR Rehman",
+},
+{
+    song: "Ghoomar",
+    type: "Folk",
+    artist: "Shreya Ghosal",
+},
+
+{
+    song: "Aane Ko Hai Khaab",
+    type: "Indie",
+    artist: "Kanishk Seth",
+},
+{
+    song: "Boondein",
+    type: "Indie",
+    artist: "Silk Route",
+},{
+    song: "Main Sharabi",
+    type: "Indie",
+    artist: "Ajay Jaswal",
+},{
+    song: "Marz",
+    type: "Indie",
+    artist: "The Yellow Diary",
+},{
+    song: "Pachtaoge",
+    type: "Indie",
+    artist: "Arijit Singh",
+},
+
+{
+    song: "Big Red Machine",
+    type: "Pop",
+    artist: "Renegade",
+},
+{
+    song: "Diamonds",
+    type: "Pop",
+    artist: "Sam Smith",
+},
+{
+    song: "Fly Away",
+    type: "Pop",
+    artist: "Renegade",
+},
+{
+    song: "Katy Perry",
+    type: "Pop",
+    artist: "Kety Perry",
+},
+{
+    song: "Shotgun",
+    type: "Pop",
+    artist: "George Ezra",
+},
+
+{
+    song: "Blue Eyes",
+    type: "Punjabi",
+    artist: "Honey Singh",
+},
+{
+    song: "Kale Je Libaas",
+    type: "Punjabi",
+    artist: "Kaka",
+},
+{
+    song: "Viah Di Khabar",
+    type: "Punjabi",
+    artist: "Kaka",
+},
+{
+    song: "Waalian",
+    type: "Punjabi",
+    artist: "Harnoor",
+},
+]
+
+function getFilteredData(type){
+    let songsList = songs.filter(ele => ele.type == `${type}`);
+    return songsList; 
+}
+
+// function to create music divs
+function songDiv(i, type){
+    let songModal = document.createElement("div");
+    songModal.classList.add("modal", `modal-${type}`)
+    songModal.innerHTML = `<div class="modal-cut material-icons">west</div>`;
+
+    let data = getFilteredData(type);
+    for(let i = 0; i < data.length; i++){
+        songModal.appendChild(createSingleSongDiv(data[i].song, data[i].artist, data[i].type))
+    }
+
+    document.querySelector(".searched-items-container").append(songModal);
+
+    document.querySelector(".modal-cut").addEventListener("click", function(){
+        songModal.remove()
+    })
+}
+
+// fuction to load songs list into songDiv 
+function createSingleSongDiv(songName, artist, type){
+    let singleSong = document.createElement("div");
+    let imageSource = "./Cover/" + type + "/" + songName + ".jpg";
+
+    singleSong.innerHTML = `
+        <div class="song">
+           <div class="song-image-container"><img src="${imageSource}" object-fit="contain"></div>
+             <div class="track-details-container">
+                 <div class="song-name"><h5 style="margin: 1rem 0 0 0;">${songName}</h5></div>
+                 <div class="song-name"><h6 style="margin: 0 0 1rem 0;">${artist}</h6></div>
+             </div>
+             <div class="material-icons song-play-pause" style="margin: 0;">play_circle_filled</div>
+        </div>`;
+
+    return singleSong;
+}
+
+// function to create lists of songs inside songs div
+function createSongsList(songList){
+    for(let i = 0; i < songList.length; i++){
+        let songName = songList[i].song;
+        let artistName = songList[i].artist;
+        let type = songList[i].type;
+        createSingleSongDiv(songName, artistName, type);
+    }
+}
+
+
+// function to know which card i've clicked on
+let playCards = document.querySelectorAll(".search-card");
+for(let i = 0; i < playCards.length; i++){
+    playCards[i].addEventListener("click", function(){
+        switch(i){
+            case 0: {
+                songDiv(i, "Pop");
+                break;
+            }
+            case 1: {
+                songDiv(i, "Folk");
+                break;
+            }
+            case 2: {
+                songDiv(i, "Concerts");
+                break;
+            }
+            
+            case 3: {
+                songDiv(i, "Indie");
+                break;
+            }
+            case 4: {
+                songDiv(i, "Bollywood");
+                break;
+            }
+            case 5: {
+                songDiv(i, "Punjabi");
+                break;
+            }
+        }
+    })
+}
+
+// ------------------------  search bar ------------------------- 
+function searchSongs(songName){
+    let songsList = songs.filter(ele => ele.song === songName);
+    console.log(songsList)
+    return songsList;
+}
+
+let searchBar = document.querySelector(".search-song");
+searchBar.addEventListener("click", function(){
+    let searchBarModal = document.createElement("div")
+    searchBarModal.classList.add("search-details")
+    searchBarModal.innerHTML = `<div class="modal-cut material-icons">west</div>`;
+    document.querySelector(".searched-items-container").append(searchBarModal)
+
+    searchSongs(searchBar.value);
+
+    document.querySelector(".modal-cut").addEventListener("click", function(){
+        searchBarModal.remove()
+    })
+})
