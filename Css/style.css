@@ -97,7 +97,91 @@ body {
     justify-content: space-evenly;
 }
 
+.contact-us-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(248, 227, 157, 0.315);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.contact-us-form {
+    color: rgb(211, 209, 209);
+    height: 20rem;
+    width: 30rem;
+    background-color: #000;
+    border-radius: 1rem;
+    padding: .7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.3rem;
+}
+
+.contact-us-remove:hover {
+    transition: all .7s ease-in-out;
+    transform: rotate(-90deg);
+    color: rgb(247, 132, 132);
+}
+
+.contact-us-message {
+    min-width: 100%; 
+    max-width: 100%;
+    min-height: 6rem;
+    font-family: 'Poppins',sans-serif;
+    outline: none;
+    padding: .2rem;
+    font-size: 1.1rem;
+    background: none;
+    color: #fff;
+    resize: none;
+    border: none;
+    border-bottom: 1px solid #fff;
+}
+
+.contact-us-form input {
+    width: 100%;
+    margin: 1rem;
+    height: 2.2rem;
+    padding: .2rem;
+    background: none;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.contact-us-buttons-container button {
+    height: 2.3rem;
+    width: 7rem;
+    margin-top: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    outline: none;
+}
+
+.contact-us-send {
+    background-color: none;
+    background: none;
+    color: #fff;
+    border: 1px solid white;
+}
+.contact-us-discard{
+    outline: none;
+    border: none;
+}
+.contact-us-discard:hover {
+    background-color: rgb(247, 191, 191);
+}
+
+.contact-us-send:hover {
+    transition: all .2s ease-in;
+    border: 1px solid rgb(185, 255, 185);
+    background-color: rgb(185, 255, 185);
+    color: #000;
+}
 
 
 /* music container properties */

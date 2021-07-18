@@ -144,8 +144,6 @@ document.querySelector(".search-card-world-hits-one").addEventListener("click", 
     })
 })
 
-
-
 let folk = ["01.mp3", "02.mp3", "03.mp3", "04.mp3", "05.mp3"]
 
 document.querySelector(".search-card-world-hits-two").addEventListener("click", function () {
@@ -434,3 +432,49 @@ for (let i = 0; i < links.length; i++) {
         links[i].classList.add("selected");
     })
 }
+
+document.querySelector("#login").addEventListener("click", function(){
+    let contactUs = document.createElement("div")
+    contactUs.innerHTML = `<div class="contact-us-modal">
+        <div class="contact-us-form">
+            <div class="material-icons contact-us-remove" style="margin-left: 95%">highlight_off</div>
+            <div>Contact Us</div>
+            <input placeholder="Your Email" class="contact-us-email" type="text">
+            <textarea class="contact-us-message" placeholder="Write your message here"></textarea>
+            <div class="contact-us-buttons-container">
+                <button class="contact-us-discard">Discard</button>
+                <button class="contact-us-send">Send</button>
+            </div>
+        </div>
+    </div>`
+    document.querySelector("body").appendChild(contactUs);
+
+    document.querySelector(".contact-us-remove").addEventListener("click", function(){
+        contactUs.remove()
+    })
+
+    let discard = document.querySelector(".contact-us-discard");
+    let send = document.querySelector(".contact-us-send");
+
+    discard.addEventListener("click", function(){
+        contactUs.remove()
+    })
+
+    send.addEventListener("click", function(){
+        let email = document.querySelector(".contact-us-email");
+        let message = document.querySelector(".contact-us-message");
+
+        if(email.value === ""){
+            alert("Please enter your email address!");
+        } else if(message.value === ""){
+            alert("Please enter your message!")
+        } else {
+            contactUs.remove();
+            setTimeout(() => {
+                alert("Message Sent Successfully!")
+            }, 100);
+        }
+        
+    })
+    
+})
