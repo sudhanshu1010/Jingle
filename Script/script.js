@@ -474,7 +474,8 @@ document.querySelector("#login").addEventListener("click", function(){
                 alert("Message Sent Successfully!")
             }, 100);
         }
-        
     })
-    
+    document.querySelector(".contact-us-modal").addEventListener("click", function(){
+        contactUs.remove()
+    })
 })
