@@ -142,18 +142,38 @@ let songs = [{
 },
 ]
 
-let likedSongs = [];
+let likedSongs = [
+    {
+        song: "Diamonds",
+        type: "Pop",
+        artist: "Sam Smith",
+    }
+];
 
 function getFilteredData(type) {
     let songsList = songs.filter(ele => ele.type == `${type}`);
     return songsList;
 }
 
-function likeUnlikeSong(numberOfSongs) {
-    let like = document.querySelector("#liked-songs")
-    like.addEventListener("click", function () {
-        console.log(like.innerHTML, numberOfSongs)
-    })
+document.querySelector("#liked-songs").addEventListener("click", function(){
+    addLikedToList()
+})
+
+function addLikedToList(data) {
+    if (isLikedSong(data)) {
+        likedSongs.pop(data);
+        console.log(likedSongs.length)
+    } else {
+        console.log(likedSongs.length)
+        likedSongs.push(data);
+    }
+}
+
+function isLikedSong(data) {
+    for (let i = 0; i < likedSongs.length; i++) {
+        if (JSON.stringify(likedSongs[i]) === JSON.stringify(data)) return true;
+    }
+    return false;
 }
 
 // function to create music divs
@@ -175,10 +195,14 @@ function songDiv(i, type) {
             document.querySelector(".container-image").setAttribute("src", `./Cover/${data[i].type}/${data[i].song}.jpg`)
             document.querySelector(".song-details-container").innerHTML = `${data[i].song} - ${data[i].artist}`;
 
+            if (isLikedSong(data[i])) {
+                document.querySelector("#liked-songs").style.color = "rgb(250, 110, 110)"
+            }
+
+           
+
             let myAudio = document.querySelector("#audio")
             myAudio.setAttribute("src", `./Music/${data[i].type}/${data[i].song}.mp3`)
-
-            likeUnlikeSong(numberOfSongs[i])
 
             if (numberOfSongs[i].innerHTML === "play_circle_filled") {
                 for (let i = 0; i < numberOfSongs.length; i++) {
@@ -236,7 +260,6 @@ if (!modalCreate) {
                     songDiv(i, "Concerts");
                     break;
                 }
-
                 case 3: {
                     songDiv(i, "Indie");
                     break;

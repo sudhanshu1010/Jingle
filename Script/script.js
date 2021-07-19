@@ -18,13 +18,13 @@ const modalClose = document.querySelectorAll(".modal-cut");
 let isVolumeClicked = false;
 
 // function to like unlike songs
-likeUnlikeBtn.addEventListener("click", function () {
-    if (likeUnlikeBtn.classList.contains("liked")) {
-        likeUnlikeBtn.classList.remove("liked")
-    } else {
-        likeUnlikeBtn.classList.add("liked")
-    }
-})
+// likeUnlikeBtn.addEventListener("click", function () {
+//     if (likeUnlikeBtn.classList.contains("liked")) {
+//         likeUnlikeBtn.classList.remove("liked")
+//     } else {
+//         likeUnlikeBtn.classList.add("liked")
+//     }
+// })
 
 // function to play pause songs
 // playPauseBtn.addEventListener("click", function () {
