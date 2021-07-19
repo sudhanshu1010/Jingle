@@ -199,8 +199,6 @@ function songDiv(i, type) {
                 document.querySelector("#liked-songs").style.color = "rgb(250, 110, 110)"
             }
 
-           
-
             let myAudio = document.querySelector("#audio")
             myAudio.setAttribute("src", `./Music/${data[i].type}/${data[i].song}.mp3`)
 
