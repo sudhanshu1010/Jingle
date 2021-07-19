@@ -21,9 +21,11 @@ function createSingleSongDiv(songName, artist, type){
     return singleSong;
 }
 
+let keyPressState = false;
 let searchBar = document.querySelector(".search-song");
 searchBar.addEventListener("keypress", function (e) {
-    if (e.key == "Enter") {
+    if (e.key == "Enter" && !keyPressState) {
+        keyPressState = true;
         let searchBarModal = document.createElement("div")
         searchBarModal.classList.add("search-details")
         searchBarModal.innerHTML = `<div class="modal-cut material-icons">west</div>`;
@@ -44,8 +46,8 @@ searchBar.addEventListener("keypress", function (e) {
             </div>`
         }
 
-        document.querySelectorAll(".modal-cut").addEventListener("click", function () {
+        document.querySelector(".modal-cut").addEventListener("click", function () {
             searchBarModal.remove()
         })
-    } 
+    }
 })

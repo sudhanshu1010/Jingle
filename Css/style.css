@@ -624,8 +624,6 @@ input {
 .about-image-container, .about-text-container, .about-links-container {
     height: 100%;
     width: 33%;
-    background-color: blue;
     border-radius: 10px;
     padding: 1rem;
 }
-

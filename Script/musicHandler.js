@@ -80,15 +80,15 @@ let songs = [{
     song: "Boondein",
     type: "Indie",
     artist: "Silk Route",
-},{
+}, {
     song: "Main Sharabi",
     type: "Indie",
     artist: "Ajay Jaswal",
-},{
+}, {
     song: "Marz",
     type: "Indie",
     artist: "The Yellow Diary",
-},{
+}, {
     song: "Pachtaoge",
     type: "Indie",
     artist: "Arijit Singh",
@@ -142,31 +142,65 @@ let songs = [{
 },
 ]
 
-function getFilteredData(type){
+let likedSongs = [];
+
+function getFilteredData(type) {
     let songsList = songs.filter(ele => ele.type == `${type}`);
-    return songsList; 
+    return songsList;
+}
+
+function likeUnlikeSong(numberOfSongs) {
+    let like = document.querySelector("#liked-songs")
+    like.addEventListener("click", function () {
+        console.log(like.innerHTML, numberOfSongs)
+    })
 }
 
 // function to create music divs
-function songDiv(i, type){
+function songDiv(i, type) {
     let songModal = document.createElement("div");
     songModal.classList.add("modal", `modal-${type}`)
     songModal.innerHTML = `<div class="modal-cut material-icons">west</div>`;
 
     let data = getFilteredData(type);
-    for(let i = 0; i < data.length; i++){
+    for (let i = 0; i < data.length; i++) {
         songModal.appendChild(createSingleSongDiv(data[i].song, data[i].artist, data[i].type))
     }
 
     document.querySelector(".searched-items-container").append(songModal);
 
-    document.querySelectorAll(".modal-cut").addEventListener("click", function(){
+    let numberOfSongs = document.querySelectorAll(".song-play-pause")
+    for (let i = 0; i < numberOfSongs.length; i++) {
+        numberOfSongs[i].addEventListener("click", function () {
+            document.querySelector(".container-image").setAttribute("src", `./Cover/${data[i].type}/${data[i].song}.jpg`)
+            document.querySelector(".song-details-container").innerHTML = `${data[i].song} - ${data[i].artist}`;
+
+            let myAudio = document.querySelector("#audio")
+            myAudio.setAttribute("src", `./Music/${data[i].type}/${data[i].song}.mp3`)
+
+            likeUnlikeSong(numberOfSongs[i])
+
+            if (numberOfSongs[i].innerHTML === "play_circle_filled") {
+                for (let i = 0; i < numberOfSongs.length; i++) {
+                    numberOfSongs[i].innerHTML = "play_circle_filled"
+                }
+                document.querySelector("#play-pause").innerHTML = numberOfSongs[i].innerHTML = "pause_circle_filled"
+                myAudio.play();
+
+            } else {
+                document.querySelector("#play-pause").innerHTML = numberOfSongs[i].innerHTML = "play_circle_filled"
+                myAudio.pause();
+            }
+        })
+    }
+
+    document.querySelector(".modal-cut").addEventListener("click", function () {
         songModal.remove()
     })
 }
 
 // fuction to load songs list into songDiv 
-function createSingleSongDiv(songName, artist, type){
+function createSingleSongDiv(songName, artist, type) {
     let singleSong = document.createElement("div");
     let imageSource = "./Cover/" + type + "/" + songName + ".jpg";
 
@@ -179,50 +213,43 @@ function createSingleSongDiv(songName, artist, type){
              </div>
              <div class="material-icons song-play-pause" style="margin: 0;">play_circle_filled</div>
         </div>`;
-
     return singleSong;
 }
 
-// // function to create lists of songs inside songs div
-// function createSongsList(songList){
-//     for(let i = 0; i < songList.length; i++){
-//         let songName = songList[i].song;
-//         let artistName = songList[i].artist;
-//         let type = songList[i].type;
-//         createSingleSongDiv(songName, artistName, type);
-//     }
-// }
-
+let modalCreate = false;
 // function to know which card i've clicked on
 let playCards = document.querySelectorAll(".search-card");
-for(let i = 0; i < playCards.length; i++){
-    playCards[i].addEventListener("click", function(){
-        switch(i){
-            case 0: {
-                songDiv(i, "Pop");
-                break;
+if (!modalCreate) {
+    for (let i = 0; i < playCards.length; i++) {
+        playCards[i].addEventListener("click", function () {
+            modalCreate = true;
+            switch (i) {
+                case 0: {
+                    songDiv(i, "Pop");
+                    break;
+                }
+                case 1: {
+                    songDiv(i, "Folk");
+                    break;
+                }
+                case 2: {
+                    songDiv(i, "Concerts");
+                    break;
+                }
+
+                case 3: {
+                    songDiv(i, "Indie");
+                    break;
+                }
+                case 4: {
+                    songDiv(i, "Bollywood");
+                    break;
+                }
+                case 5: {
+                    songDiv(i, "Punjabi");
+                    break;
+                }
             }
-            case 1: {
-                songDiv(i, "Folk");
-                break;
-            }
-            case 2: {
-                songDiv(i, "Concerts");
-                break;
-            }
-            
-            case 3: {
-                songDiv(i, "Indie");
-                break;
-            }
-            case 4: {
-                songDiv(i, "Bollywood");
-                break;
-            }
-            case 5: {
-                songDiv(i, "Punjabi");
-                break;
-            }
-        }
-    })
+        })
+    }
 }

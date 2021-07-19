@@ -27,15 +27,15 @@ likeUnlikeBtn.addEventListener("click", function () {
 })
 
 // function to play pause songs
-playPauseBtn.addEventListener("click", function () {
-    if (playPauseBtn.textContent == "play_circle_filled") {
-        audioEle.play();
-        playPauseBtn.textContent = "pause_circle_filled"
-    } else {
-        audioEle.pause();
-        playPauseBtn.textContent = "play_circle_filled"
-    }
-})
+// playPauseBtn.addEventListener("click", function () {
+//     if (playPauseBtn.textContent == "play_circle_filled") {
+//         audioEle.play();
+//         playPauseBtn.textContent = "pause_circle_filled"
+//     } else {
+//         audioEle.pause();
+//         playPauseBtn.textContent = "play_circle_filled"
+//     }
+// })
 
 function controlVolume() {
     if (!isVolumeClicked) {
@@ -89,6 +89,61 @@ progressContainer.addEventListener("click", function (e) {
     const duration = audio.duration;
 
     audioEle.currentTime = (clickX / width) * duration;
+})
+
+volumeBtn.addEventListener("click", controlVolume)
+
+// function to add remove selected classes 
+let links = document.querySelectorAll("li");
+for (let i = 0; i < links.length; i++) {
+    links[i].addEventListener("click", function () {
+        document.querySelector(".selected").classList.remove("selected")
+        links[i].classList.add("selected");
+    })
+}
+
+document.querySelector("#login").addEventListener("click", function(){
+    let contactUs = document.createElement("div")
+    contactUs.innerHTML = `<div class="contact-us-modal">
+        <div class="contact-us-form">
+            <div class="material-icons contact-us-remove" style="margin-left: 95%">highlight_off</div>
+            <div>Contact Us</div>
+            <input placeholder="Your Email" class="contact-us-email" type="text">
+            <textarea class="contact-us-message" placeholder="Write your message here"></textarea>
+            <div class="contact-us-buttons-container">
+                <button class="contact-us-discard">Discard</button>
+                <button class="contact-us-send">Send</button>
+            </div>
+        </div>
+    </div>`
+    document.querySelector("body").appendChild(contactUs);
+
+    document.querySelector(".contact-us-remove").addEventListener("click", function(){
+        contactUs.remove()
+    })
+
+    let discard = document.querySelector(".contact-us-discard");
+    let send = document.querySelector(".contact-us-send");
+
+    discard.addEventListener("click", function(){
+        contactUs.remove()
+    })
+
+    send.addEventListener("click", function(){
+        let email = document.querySelector(".contact-us-email");
+        let message = document.querySelector(".contact-us-message");
+
+        if(email.value === ""){
+            alert("Please enter your email address!");
+        } else if(message.value === ""){
+            alert("Please enter your message!")
+        } else {
+            contactUs.remove();
+            setTimeout(() => {
+                alert("Message Sent Successfully!")
+            }, 100);
+        }
+    })
 })
 
 // document.querySelector(".search-card-world-hits-one").addEventListener("click", function () {
@@ -408,72 +463,15 @@ progressContainer.addEventListener("click", function (e) {
 //     })
 // })
 
-function loadSong(i, e) {
-    if (e.currentTarget.textContent == "play_circle_filled") {
-        e.currentTarget.textContent = "pause_circle_filled"
-        playPauseBtn.textContent = "pause_circle_filled";
-        audioEle.setAttribute("src", `./music/Folk/${folk[i]}`);
-        audioEle.play();
-    } else {
-        e.currentTarget.textContent = "play_circle_filled"
-        playPauseBtn.textContent = "play_circle_filled";
-        audioEle.pause();
-    }
-
-}
-
-volumeBtn.addEventListener("click", controlVolume)
-
-// function to add remove selected classes 
-let links = document.querySelectorAll("li");
-for (let i = 0; i < links.length; i++) {
-    links[i].addEventListener("click", function () {
-        document.querySelector(".selected").classList.remove("selected")
-        links[i].classList.add("selected");
-    })
-}
-
-document.querySelector("#login").addEventListener("click", function(){
-    let contactUs = document.createElement("div")
-    contactUs.innerHTML = `<div class="contact-us-modal">
-        <div class="contact-us-form">
-            <div class="material-icons contact-us-remove" style="margin-left: 95%">highlight_off</div>
-            <div>Contact Us</div>
-            <input placeholder="Your Email" class="contact-us-email" type="text">
-            <textarea class="contact-us-message" placeholder="Write your message here"></textarea>
-            <div class="contact-us-buttons-container">
-                <button class="contact-us-discard">Discard</button>
-                <button class="contact-us-send">Send</button>
-            </div>
-        </div>
-    </div>`
-    document.querySelector("body").appendChild(contactUs);
-
-    document.querySelector(".contact-us-remove").addEventListener("click", function(){
-        contactUs.remove()
-    })
-
-    let discard = document.querySelector(".contact-us-discard");
-    let send = document.querySelector(".contact-us-send");
-
-    discard.addEventListener("click", function(){
-        contactUs.remove()
-    })
-
-    send.addEventListener("click", function(){
-        let email = document.querySelector(".contact-us-email");
-        let message = document.querySelector(".contact-us-message");
-
-        if(email.value === ""){
-            alert("Please enter your email address!");
-        } else if(message.value === ""){
-            alert("Please enter your message!")
-        } else {
-            contactUs.remove();
-            setTimeout(() => {
-                alert("Message Sent Successfully!")
-            }, 100);
-        }
-    })
-    
-})
+// function loadSong(i, e) {
+//     if (e.currentTarget.textContent == "play_circle_filled") {
+//         e.currentTarget.textContent = "pause_circle_filled"
+//         playPauseBtn.textContent = "pause_circle_filled";
+//         audioEle.setAttribute("src", `./music/Folk/${folk[i]}`);
+//         audioEle.play();
+//     } else {
+//         e.currentTarget.textContent = "play_circle_filled"
+//         playPauseBtn.textContent = "play_circle_filled";
+//         audioEle.pause();
+//     }
+// }
