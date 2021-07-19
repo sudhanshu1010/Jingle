@@ -160,7 +160,7 @@ function songDiv(i, type){
 
     document.querySelector(".searched-items-container").append(songModal);
 
-    document.querySelector(".modal-cut").addEventListener("click", function(){
+    document.querySelectorAll(".modal-cut").addEventListener("click", function(){
         songModal.remove()
     })
 }
@@ -183,16 +183,15 @@ function createSingleSongDiv(songName, artist, type){
     return singleSong;
 }
 
-// function to create lists of songs inside songs div
-function createSongsList(songList){
-    for(let i = 0; i < songList.length; i++){
-        let songName = songList[i].song;
-        let artistName = songList[i].artist;
-        let type = songList[i].type;
-        createSingleSongDiv(songName, artistName, type);
-    }
-}
-
+// // function to create lists of songs inside songs div
+// function createSongsList(songList){
+//     for(let i = 0; i < songList.length; i++){
+//         let songName = songList[i].song;
+//         let artistName = songList[i].artist;
+//         let type = songList[i].type;
+//         createSingleSongDiv(songName, artistName, type);
+//     }
+// }
 
 // function to know which card i've clicked on
 let playCards = document.querySelectorAll(".search-card");
@@ -227,24 +226,3 @@ for(let i = 0; i < playCards.length; i++){
         }
     })
 }
-
-// ------------------------  search bar ------------------------- 
-function searchSongs(songName){
-    let songsList = songs.filter(ele => ele.song === songName);
-    console.log(songsList)
-    return songsList;
-}
-
-let searchBar = document.querySelector(".search-song");
-searchBar.addEventListener("click", function(){
-    let searchBarModal = document.createElement("div")
-    searchBarModal.classList.add("search-details")
-    searchBarModal.innerHTML = `<div class="modal-cut material-icons">west</div>`;
-    document.querySelector(".searched-items-container").append(searchBarModal)
-
-    searchSongs(searchBar.value);
-
-    document.querySelector(".modal-cut").addEventListener("click", function(){
-        searchBarModal.remove()
-    })
-})

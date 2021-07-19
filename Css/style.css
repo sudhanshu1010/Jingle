@@ -411,6 +411,7 @@ img{
     border-radius: 1rem;
     background-color:  #171819;
     padding: 1rem;
+    
 }
 
 .search-bar-container {
@@ -427,6 +428,13 @@ img{
     align-items: center;
     justify-content: center;
 
+}
+
+.nothing-found {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .search-bar-holder {
@@ -620,3 +628,4 @@ input {
     border-radius: 10px;
     padding: 1rem;
 }
+
