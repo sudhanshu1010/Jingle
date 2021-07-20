@@ -149,8 +149,10 @@ let likedSongs = [
 let likeButton = document.querySelector("#liked-songs")
 likeButton.addEventListener("click", function () {
     if (getComputedStyle(likeButton).color == "rgb(255, 255, 255)") {
+        likeButton.innerHTML = "favorite"
         likeButton.style.color = "rgb(247, 132, 132)"
     } else {
+        likeButton.innerHTML = "favorite_border"
         likeButton.style.color = "white"
     }
 })
