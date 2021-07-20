@@ -146,6 +146,8 @@ let likedSongs = [
     
 ]
 
+
+
 function addRemoveSong(data){
     if(likedSongs.includes(data)){
         likedSongs.pop(data)
@@ -206,6 +208,14 @@ function songDiv(j, type) {
                 myAudio.pause();
             }
 
+            let likeButton = document.querySelector("#liked-songs")
+            likeButton.addEventListener("click", function(){
+                if(likeButton.innerHTML == "play_circle_filled"){
+                    likeButton.innerHTML = "pause_circle_filled"
+                } else {
+                    likeButton.innerHTML = "play_circle_filled"
+                }
+            })
         }) 
     }
 
