@@ -116,7 +116,8 @@ document.querySelector("#login").addEventListener("click", function(){
             </div>
         </div>
     </div>`
-    document.querySelector("body").appendChild(contactUs);
+    let htmlBody = document.querySelector("body")
+    htmlBody.appendChild(contactUs);
 
     document.querySelector(".contact-us-remove").addEventListener("click", function(){
         contactUs.remove()
@@ -145,6 +146,8 @@ document.querySelector("#login").addEventListener("click", function(){
         }
     })
 })
+
+
 
 // document.querySelector(".search-card-world-hits-one").addEventListener("click", function () {
 //     let modalPop = document.createElement("div");

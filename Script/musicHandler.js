@@ -205,6 +205,8 @@ function songDiv(j, type) {
             let myAudio = document.querySelector("#audio")
             myAudio.setAttribute("src", `./Music/${data[i].type}/${data[i].song}.mp3`)
 
+            console.log(myAudio.duration)
+
             if (numberOfSongs[i].innerHTML === "play_circle_filled") {
                 for (let i = 0; i < numberOfSongs.length; i++) {
                     numberOfSongs[i].innerHTML = "play_circle_filled"
