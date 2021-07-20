@@ -143,13 +143,20 @@ let songs = [{
 ]
 
 let likedSongs = [
-    
+
 ]
 
+let likeButton = document.querySelector("#liked-songs")
+likeButton.addEventListener("click", function () {
+    if (getComputedStyle(likeButton).color == "rgb(255, 255, 255)") {
+        likeButton.style.color = "rgb(247, 132, 132)"
+    } else {
+        likeButton.style.color = "white"
+    }
+})
 
-
-function addRemoveSong(data){
-    if(likedSongs.includes(data)){
+function addRemoveSong(data) {
+    if (likedSongs.includes(data)) {
         likedSongs.pop(data)
     } else {
         likedSongs.push(data)
@@ -208,15 +215,8 @@ function songDiv(j, type) {
                 myAudio.pause();
             }
 
-            let likeButton = document.querySelector("#liked-songs")
-            likeButton.addEventListener("click", function(){
-                if(likeButton.innerHTML == "play_circle_filled"){
-                    likeButton.innerHTML = "pause_circle_filled"
-                } else {
-                    likeButton.innerHTML = "play_circle_filled"
-                }
-            })
-        }) 
+
+        })
     }
 
     document.querySelector(".modal-cut").addEventListener("click", function () {
