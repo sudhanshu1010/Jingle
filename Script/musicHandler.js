@@ -143,30 +143,21 @@ let songs = [{
 ]
 
 let likedSongs = [
-    {
-        song: "Diamonds",
-        type: "Pop",
-        artist: "Sam Smith",
+    
+]
+
+function addRemoveSong(data){
+    if(likedSongs.includes(data)){
+        likedSongs.pop(data)
+    } else {
+        likedSongs.push(data)
     }
-];
+    console.log(likedSongs)
+}
 
 function getFilteredData(type) {
     let songsList = songs.filter(ele => ele.type == `${type}`);
     return songsList;
-}
-
-document.querySelector("#liked-songs").addEventListener("click", function(){
-    addLikedToList()
-})
-
-function addLikedToList(data) {
-    if (isLikedSong(data)) {
-        likedSongs.pop(data);
-        console.log(likedSongs.length)
-    } else {
-        console.log(likedSongs.length)
-        likedSongs.push(data);
-    }
 }
 
 function isLikedSong(data) {
@@ -176,11 +167,15 @@ function isLikedSong(data) {
     return false;
 }
 
+let recentlyPlayed = []
+console.log(recentlyPlayed.length)
+
 // function to create music divs
-function songDiv(i, type) {
+function songDiv(j, type) {
     let songModal = document.createElement("div");
     songModal.classList.add("modal", `modal-${type}`)
     songModal.innerHTML = `<div class="modal-cut material-icons">west</div>`;
+
 
     let data = getFilteredData(type);
     for (let i = 0; i < data.length; i++) {
@@ -192,12 +187,9 @@ function songDiv(i, type) {
     let numberOfSongs = document.querySelectorAll(".song-play-pause")
     for (let i = 0; i < numberOfSongs.length; i++) {
         numberOfSongs[i].addEventListener("click", function () {
+
             document.querySelector(".container-image").setAttribute("src", `./Cover/${data[i].type}/${data[i].song}.jpg`)
             document.querySelector(".song-details-container").innerHTML = `${data[i].song} - ${data[i].artist}`;
-
-            if (isLikedSong(data[i])) {
-                document.querySelector("#liked-songs").style.color = "rgb(250, 110, 110)"
-            }
 
             let myAudio = document.querySelector("#audio")
             myAudio.setAttribute("src", `./Music/${data[i].type}/${data[i].song}.mp3`)
@@ -213,12 +205,29 @@ function songDiv(i, type) {
                 document.querySelector("#play-pause").innerHTML = numberOfSongs[i].innerHTML = "play_circle_filled"
                 myAudio.pause();
             }
-        })
+
+        }) 
     }
 
     document.querySelector(".modal-cut").addEventListener("click", function () {
         songModal.remove()
     })
+}
+
+let playPauseGlobal = document.querySelector("#play-pause")
+playPauseGlobal.addEventListener("click", function () {
+    playPauseGlobal.innerHTML == "play_circle_filled" ? playSong() : pauseSong();
+})
+
+let audio = document.querySelector("#audio")
+function pauseSong() {
+    audio.pause();
+    playPauseGlobal.innerHTML = "play_circle_filled"
+}
+
+function playSong() {
+    audio.play();
+    playPauseGlobal.innerHTML = "pause_circle_filled"
 }
 
 // fuction to load songs list into songDiv 

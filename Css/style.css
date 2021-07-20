@@ -326,6 +326,10 @@ img{
     cursor: pointer;
 }
 
+.progress-bar:hover {
+    height: 6px;
+}
+
 .timer {
     color: #fff;
     padding: 1rem;
