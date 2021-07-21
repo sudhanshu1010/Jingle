@@ -261,6 +261,7 @@ function createSingleSongDiv(songName, artist, type) {
 }
 
 let modalCreate = false;
+
 // function to know which card i've clicked on
 let playCards = document.querySelectorAll(".search-card");
 if (!modalCreate) {
