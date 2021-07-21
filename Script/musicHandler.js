@@ -1,7 +1,7 @@
 let songs = [{
     song: "Bheegi Bheegi Raaton Mein",
     type: "Bollywood",
-    artist: "Adnan Sami",
+    artist: "Sanam",
 },
 {
     song: "Ik Mulaqaat",
@@ -142,9 +142,7 @@ let songs = [{
 },
 ]
 
-let likedSongs = [
-
-]
+let likedSongs = []
 
 let likeButton = document.querySelector("#liked-songs")
 likeButton.addEventListener("click", function () {
@@ -181,12 +179,13 @@ function isLikedSong(data) {
 let recentlyPlayed = []
 console.log(recentlyPlayed.length)
 
+let myAudio = document.querySelector("#audio")
+
 // function to create music divs
 function songDiv(j, type) {
     let songModal = document.createElement("div");
     songModal.classList.add("modal", `modal-${type}`)
     songModal.innerHTML = `<div class="modal-cut material-icons">west</div>`;
-
 
     let data = getFilteredData(type);
     for (let i = 0; i < data.length; i++) {
@@ -202,7 +201,6 @@ function songDiv(j, type) {
             document.querySelector(".container-image").setAttribute("src", `./Cover/${data[i].type}/${data[i].song}.jpg`)
             document.querySelector(".song-details-container").innerHTML = `${data[i].song} - ${data[i].artist}`;
 
-            let myAudio = document.querySelector("#audio")
             myAudio.setAttribute("src", `./Music/${data[i].type}/${data[i].song}.mp3`)
 
             console.log(myAudio.duration)
@@ -219,7 +217,6 @@ function songDiv(j, type) {
                 myAudio.pause();
             }
 
-
         })
     }
 
@@ -231,6 +228,8 @@ function songDiv(j, type) {
 let playPauseGlobal = document.querySelector("#play-pause")
 playPauseGlobal.addEventListener("click", function () {
     playPauseGlobal.innerHTML == "play_circle_filled" ? playSong() : pauseSong();
+    document.querySelector(".container-image").setAttribute("src", "./Cover/Bollywood/Bheegi Bheegi Raaton Mein.jpg")
+    document.querySelector(".song-details-container").innerHTML = "Bheegi Bheegi Raaton Mein - Sanam"
 })
 
 let audio = document.querySelector("#audio")
