@@ -148,9 +148,9 @@ document.querySelector("#login").addEventListener("click", function(){
 })
 
 // function that prevents selection of text on double click or slide 
-document.querySelector("body").addEventListener("mousedown", function(e){
-    e.preventDefault();
-}, false);
+// document.querySelector("body").addEventListener("mousedown", function(e){
+//     e.preventDefault();
+// }, false);
 
 // document.querySelector(".search-card-world-hits-one").addEventListener("click", function () {
 //     let modalPop = document.createElement("div");
