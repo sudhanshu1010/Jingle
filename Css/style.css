@@ -405,6 +405,16 @@ img{
     margin-bottom: 2%;
 }
 
+.browse-modal {
+    margin-top: -22rem;
+    height: 80%;
+    width: 30%;
+    background-color: #171819;
+    z-index: 1000;
+    overflow: auto;
+    position: fixed;
+}
+
 
 /* search bar container */
 

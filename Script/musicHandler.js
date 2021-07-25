@@ -297,3 +297,13 @@ if (!modalCreate) {
         })
     }
 }
+
+// browse option 
+let browse = document.querySelector(".web")
+browse.addEventListener("click", function(){
+    let browseModal = document.createElement("div")
+    browseModal.classList.add("browse-modal")
+    browseModal.innerHTML = `<div class="modal">
+    <div class="modal-cut material-icons">west</div></div>`
+    document.querySelector(".home-container").append(browseModal)
+})
